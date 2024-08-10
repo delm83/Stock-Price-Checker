@@ -17,6 +17,7 @@ app.use(cors({origin: '*'})); //For FCC testing purposes only
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+//Set the content security policies to only allow loading of scripts and CSS from my server
 app.use(helmet.contentSecurityPolicy({"directives": {"defaultSrc": ["'self'"], "script-src": ["'self'"], "styleSrc": ["'self'"]}}))
 
 //Index page (static HTML)
